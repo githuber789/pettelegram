@@ -33,28 +33,28 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
             LOGGER.info("Processing update: {}", update);
             // Process your updates here
 
-            if (update.callbackQuery() != null) {
-                if (update.callbackQuery().data().equals("stage1"))
-                    giveInfoAboutShelter(update);
+            if (update.callbackQuery() != null) {//
+                if (update.callbackQuery().data().equals("stage1"))//
+                    giveInfoAboutShelter(update);//
 
-                if (update.callbackQuery().data().equals("stage2"))
-                    printInstructionsAboutPetFromShelter(update);
+                if (update.callbackQuery().data().equals("stage2"))//
+                    printInstructionsAboutPetFromShelter(update);//
 
-                if (update.callbackQuery().data().equals("stage3"))
-                    getPetReport(update);
+                if (update.callbackQuery().data().equals("stage3"))//
+                    getPetReport(update);//
 
-                if(update.callbackQuery().data().equals("callVolunteer")){
-                    callVolunteer(update);
-                }
-            }
+                if(update.callbackQuery().data().equals("callVolunteer")){//
+                    callVolunteer(update);//
+                }//
+            }//
 
-            if (update.message() != null) {
-                // старт
-                if (update.message().text().equals("/start"))
-                    selectRequest(update);
-            }
-        });
-        return UpdatesListener.CONFIRMED_UPDATES_ALL;
+            if (update.message() != null) {//
+                // старт//
+                if (update.message().text().equals("/start"))//
+                    selectRequest(update);//
+            }//
+        });//
+        return UpdatesListener.CONFIRMED_UPDATES_ALL;//
     }
 
     private void selectRequest(Update update) {
